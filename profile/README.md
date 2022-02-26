@@ -1,7 +1,5 @@
 Japa is an API-first testing framework. It focuses only on testing Node.js (backend) applications, thus resulting in a fast, small, and simple tests runner.
 
-In this guide, we will go through the Japa features and learn about the rationale behind the project.
-
 ## Features
 Despite being a small and a simple tests runner, Japa has a ton of features you expect from a great testing framework. It includes:
 
