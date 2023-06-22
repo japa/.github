@@ -8,15 +8,33 @@ on:
         required: false
 
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
+  test_linux:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
         node-version: [18.16.0, 20.x]
-        exclude:
-          - os: windows-latest
-            if: ${{ inputs.disable-windows }}
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+
+  test_windows:
+    if: ${{ !inputs.disable-windows }}
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        node-version: [18.16.0, 20.x]
 
     steps:
     - name: Checkout code
