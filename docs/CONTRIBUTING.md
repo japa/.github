@@ -24,15 +24,15 @@ If you're reporting a bug, include as much information as possible with the code
 - **POOR ISSUE**: You dump the question you have with the hope that the other person will ask the relevant questions and help you. These kinds of issues are closed automatically without any explanation.
 
 ## Having a discussion
-You often want to discuss a topic or maybe share some ideas. In that case, create a discussion in the discussions forum under the **💡Ideas** category.
+You often want to discuss a topic or maybe share some ideas. In that case, create an issue and prefix it with the **Idea** keyword. For example: `Idea - Should we add support for X`.
 
 ## Educating others
-Educating others is one of the best ways to contribute to any community and earn recognition. 
+Educating others is one of the best ways to contribute to any community and earn recognition.
 
-You can use the **📚 Cookbooks** category on our discussion forum to share an article with others. The cookbooks section is NOT strictly moderated, except the shared knowledge should be relevant to the project.
+If you have written a blog post, created a package for Japa, or presented us in a Confrence/Meetup, feel free to [share your work with us](https://github.com/japa/runner/issues/31).
 
 ## Creating pull requests
-It is never a good experience to have your pull request declined after investing a lot of time and effort in writing the code. Therefore, we highly recommend you to [kick off a discussion]() before starting any new work on your side.
+It is never a good experience to have your pull request declined after investing a lot of time and effort in writing the code. Therefore, we highly recommend you to [kick off a discussion](https://github.com/japa/runner/issues/new?title=Discussion%20for%20a%20new%20feature%20-%20%3CYOUR%20FEATURE%20NAME%3E) before starting any new work on your side.
 
 Just start a discussion and explain what are you planning to contribute? 
 
