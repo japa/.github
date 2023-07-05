@@ -7,6 +7,12 @@ on:
         default: false
         required: false
 
+      install-playwright-browsers:
+        description: Install playwright browsers before running tests
+        type: boolean
+        default: false
+        required: false
+
 jobs:
   test_linux:
     runs-on: ubuntu-latest
@@ -25,6 +31,10 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+
+    - name: Install Playwright Browsers
+      if: ${{ inputs.install-playwright-browsers }}
+      run: npx playwright install --with-deps
 
     - name: Run tests
       run: npm test
@@ -47,6 +57,10 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+
+    - name: Install Playwright Browsers
+      if: ${{ inputs.install-playwright-browsers }}
+      run: npx playwright install --with-deps
 
     - name: Run tests
       run: npm test
