@@ -1,33 +1,31 @@
-Japa is an API-first testing framework. It focuses only on testing Node.js (backend) applications, thus resulting in a fast, small, and simple tests runner.
+Japa comes with everything you need to test your backend applications. Be it writing JSON API tests using an Open API schema or writing browser tests using Playwright.
+
+Unlike other testing frameworks born out of the frontend ecosystem, Japa focuses only on testing backend applications and libraries. Therefore, Japa is **simpler**, **faster**, and **bloatware free**.
 
 ## Features
 Despite being a small and a simple tests runner, Japa has a ton of features you expect from a great testing framework. It includes:
 
-- Support for [test groups](https://japa.dev/grouping-tests), timeout, todo tests and [regression tests](https://japa.dev/underlying-test-class#fails).
-- Support for [Datasets](https://japa.dev/datasets).
-- Assertion libraries with support for [assertion planning](https://japa.dev/assertion-planning).
-- Ability to [filter](https://japa.dev/filtering-tests) and run specific or only failing tests.
-- Re-imagined [lifecycle hooks](https://japa.dev/lifecycle-hooks).
-- Multiple [reporters](https://japa.dev/plugins/spec-reporter) to display tests progress.
+- Support for [asynchronous tests](https://japa.dev/docs/testing-async-code).
+- Support for [snapshot testing](https://japa.dev/docs/plugins/snapshot).
+- Support for [Datasets](https://japa.dev/docs/datasets).
+- Official plugins for [chai assert](https://japa.dev/docs/plugins/assert) and [jest expect](https://japa.dev/docs/plugins/expect) assertion libraries.
+- [Coverage reporting](https://japa.dev/docs/coverage) using nyc and c8.
+- Ability to pin and run only selected tests.
+- Multiple [reporters](https://japa.dev/docs/test-reporters) to display tests progress.
 - Great CLI experience with pretty diffs and formatted error stacks.
 - Works with **ESM** and [TypeScript](https://japa.dev/usage-with-typescript) both with zero additional setup.
 
 ## Why Japa?
 There are many testing frameworks available in the JavaScript ecosystem. So let's explore what makes Japa different.
 
-### Node only
-Most mainstream testing frameworks in JavaScript are heavily influenced by the frontend ecosystem, or we can say they are frontend first.
+### No overhead of transpiling source code
+Popular testing frameworks like Jest (uses Babel) and Vitest (uses Vite) use transpilers to process your source code. No matter how quick the underlying transpilers are, they will always have additional overhead compared to tools with no transpilers.
 
-Even though JavaScript can run almost everywhere, the needs and approaches of different ecosystems do vary. For example:
+If you are building libraries or applications to work with Node.js runtime (not the browser), there is no need to use a transpiler. As a result:
 
-- Jest, process all of your source files through the `@jest/transform` package, which uses `babel-jest` internally by default. Also, you can register additional transformers for TypeScript, Vue, and so on.
-- Similarly, Vitest uses Vite under the hood for code transformation.
+- You will have a better debugging experience.
+- Your application and tests will boot faster.
+- No additional configuration to manage.
 
-The code transformation layer is not at all required when writing backend applications for Node.js. **So why pay the penalty of doing so?**
-
-Also, much community effort goes into creating plugins/extensions required by frontend applications. Whereas with Japa, we focus on **growing the ecosystem around the needs of backend testing**.
-
-To conclude, I am not saying Jest or Vitest are technically inferior. It's just Node.js deserves its own first-class testing experience.
-
-### Extensible
-Japa is extensible to its core. Not only you can create **plugins** and **reporters** for Japa, you can also extend the [Test](https://japa.dev/underlying-test-class#extending-test-class), [TestContext](https://japa.dev/test-context#adding-custom-properties-to-the-context), and [Group](https://japa.dev/grouping-tests) classes to add additional behavior.
+### Works with your existing project setup
+Since Japa does not have to use transpilers, it works with your existing project setup. Moreover, Japa does not even have a CLI tool. You run your tests using the `node` or `bun` command.
