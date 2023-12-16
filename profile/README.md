@@ -13,7 +13,7 @@ Despite being a small and a simple tests runner, Japa has a ton of features you 
 - Ability to pin and run only selected tests.
 - Multiple [reporters](https://japa.dev/docs/test-reporters) to display tests progress.
 - Great CLI experience with pretty diffs and formatted error stacks.
-- Works with **ESM** and [TypeScript](https://japa.dev/usage-with-typescript) both with zero additional setup.
+- Works with [ESM and TypeScript](https://japa.dev/docs/introduction#works-with-your-existing-project-setup) both with zero additional setup.
 
 ## Why Japa?
 There are many testing frameworks available in the JavaScript ecosystem. So let's explore what makes Japa different.
